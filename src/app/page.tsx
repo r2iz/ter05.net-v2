@@ -99,7 +99,7 @@ export default function Page() {
                                         <Github/>
                                     </Link>
                                     <Link
-                                        href="https://x.com/Pz2Or"
+                                        href="https://x.com/Pz2Or_"
                                         className="text-gray-400 hover:text-white transition-colors duration-300"
                                     >
                                         <Twitter/>
