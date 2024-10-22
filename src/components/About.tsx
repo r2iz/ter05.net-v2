@@ -3,18 +3,18 @@
 import { motion } from 'framer-motion'
 import { Github, Twitter, Mail } from 'lucide-react'
 
-const careers = [
-    {
-        id: "1",
-        title: "生誕",
-        date: "2009/05/31",
-    },
-    {
-        id: "2",
-        title: "聖光学院中学校",
-        date: "2022/04 - now",
-    }
-]
+// const careers = [
+//     {
+//         id: "1",
+//         title: "生誕",
+//         date: "2009/05/31",
+//     },
+//     {
+//         id: "2",
+//         title: "聖光学院中学校",
+//         date: "2022/04 - now",
+//     }
+// ]
 
 export default function About() {
     return (
@@ -62,26 +62,26 @@ export default function About() {
                     </p>
                 </motion.section>
 
-                <motion.section
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8, duration: 0.5 }}
-                >
-                    <h2 className="text-2xl font-semibold mb-4">Careers</h2>
-                    <div>
-                        {careers.map((career) => (
-                            <div key={career.id} className="flex items-center justify-between py-2 border-b border-gray-800">
-                                <p className="text-gray-300">{career.title}</p>
-                                <p className="text-gray-300">{career.date}</p>
-                            </div>
-                        ))}
-                    </div>
-                </motion.section>
+                {/*<motion.section*/}
+                {/*    initial={{ opacity: 0, x: -20 }}*/}
+                {/*    animate={{ opacity: 1, x: 0 }}*/}
+                {/*    transition={{ delay: 0.8, duration: 0.5 }}*/}
+                {/*>*/}
+                {/*    <h2 className="text-2xl font-semibold mb-4">Careers</h2>*/}
+                {/*    <div>*/}
+                {/*        {careers.map((career) => (*/}
+                {/*            <div key={career.id} className="flex items-center justify-between py-2 border-b border-gray-800">*/}
+                {/*                <p className="text-gray-300">{career.title}</p>*/}
+                {/*                <p className="text-gray-300">{career.date}</p>*/}
+                {/*            </div>*/}
+                {/*        ))}*/}
+                {/*    </div>*/}
+                {/*</motion.section>*/}
 
                 <motion.section
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1, duration: 0.5 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
                 >
                     <h2 className="text-2xl font-semibold mb-4">Connect With Me</h2>
                     <div className="flex justify-center space-x-6">

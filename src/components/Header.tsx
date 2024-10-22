@@ -7,7 +7,7 @@ export default function Header(props: HeaderProps) {
         <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-lg shadow-md">
             <nav className="container mx-auto px-6 py-4">
                 <ul className="flex justify-center space-x-8 text-sm font-semibold">
-                    {['Home', 'About'].map((item) => (
+                    {['Home', 'About', 'Blog'].map((item) => (
                         <li key={item}>
                             <a
                                 href={`/${item === 'Home' ? '' : item.toLowerCase()}`}

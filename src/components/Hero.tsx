@@ -20,7 +20,7 @@ export default function Hero(){
                     className="flex items-center space-x-4"
                 >
                     <Avatar className="w-24 h-24 md:w-36 md:h-36 mr-0 md:mr-4">
-                        <AvatarImage src="/icon.png"/>
+                        <AvatarImage src="/icon.webp"/>
                         <AvatarFallback>Pz2Or</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col items-center md:items-start">
