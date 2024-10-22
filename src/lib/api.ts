@@ -1,22 +1,34 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import { join } from 'path';
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-const contentsDirectory = path.join(process.cwd(), 'contents');
-
-export function getPostList() {
-  return fs.readdirSync(contentsDirectory);
+export interface BlogPost {
+    slug: string
+    frontMatter: {
+        title: string
+        date: string
+    }
+    content: string
 }
 
-export function getPostBySlug(slug: string) {
-    const realSlug = slug.replace(/\.md$/, "");
-    const fullPath = join(contentsDirectory, `${realSlug}.md`);
-    const fileContents = fs.readFileSync(fullPath, "utf-8");
-    return fileContents;
+export function getBlogPosts(): BlogPost[] {
+    const postsDirectory = path.join(process.cwd(), 'contents')
+    const filenames = fs.readdirSync(postsDirectory)
+
+    return filenames.map((filename) => {
+        const filePath = path.join(postsDirectory, filename)
+        const fileContents = fs.readFileSync(filePath, 'utf8')
+        const { data: frontMatter, content } = matter(fileContents)
+
+        return {
+            slug: filename.replace('.md', ''),
+            frontMatter: frontMatter as BlogPost['frontMatter'],
+            content,
+        }
+    })
 }
 
-export function getAllPosts() {
-    const slugs = getPostList();
-    const posts = slugs.map((slug) => getPostBySlug(slug));
-    return posts;
+export function getBlogPost(slug: string): BlogPost | undefined {
+    const posts = getBlogPosts()
+    return posts.find((post) => post.slug === slug)
 }
