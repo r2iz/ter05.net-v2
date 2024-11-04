@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import ReactMarkdown from 'react-markdown'
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
-import { type BlogPost } from '@/lib/api'
+import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { type BlogPost } from "@/lib/api";
 
 export default function BlogPost({ post }: { post: BlogPost }) {
     return (
@@ -47,16 +46,15 @@ export default function BlogPost({ post }: { post: BlogPost }) {
                 >
                     {post.frontMatter.date}
                 </motion.p>
-
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
-                    className="prose prose-invert max-w-none"
+                    className="porse prose-invert max-w-none"
                 >
-                    <ReactMarkdown>{post.content}</ReactMarkdown>
+                    {post.content}
                 </motion.div>
             </motion.article>
         </motion.div>
-    )
+    );
 }
