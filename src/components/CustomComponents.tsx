@@ -4,15 +4,24 @@ interface CustomComponentProps {
 }
 
 export const CustomH1 = ({ children }: CustomComponentProps) => (
-    <h1 className="text-3xl font-bold my-4">{children}</h1>
+    <h1 className="text-3xl font-bold my-4 flex flex-row">
+        <div className="text-gray-300 mr-2">#</div>
+        {children}
+    </h1>
 );
 
 export const CustomH2 = ({ children }: CustomComponentProps) => (
-    <h2 className="text-2xl font-semibold my-3">{children}</h2>
+    <h2 className="text-2xl font-semibold my-3 flex flex-row">
+        <div className="text-gray-300 mr-2">##</div>
+        {children}
+    </h2>
 );
 
 export const CustomH3 = ({ children }: CustomComponentProps) => (
-    <h3 className="text-xl font-medium my-2">{children}</h3>
+    <h3 className="text-xl font-medium my-2 flex flex-row">
+        <div className="text-gray-300 mr-2">###</div>
+        {children}
+    </h3>
 );
 
 export const CustomP = ({ children }: CustomComponentProps) => (
@@ -38,7 +47,7 @@ export const CustomBlockquote = ({ children }: CustomComponentProps) => (
 );
 
 export const CustomCode = ({ children }: CustomComponentProps) => (
-    <code className="bg-gray-100 rounded px-1">{children}</code>
+    <code className="bg-gray-700 rounded px-1">{children}</code>
 );
 
 export const CustomPre = ({ children }: CustomComponentProps) => (
