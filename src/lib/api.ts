@@ -69,7 +69,7 @@ export function getBlogPosts(): BlogPost[] {
     const postsDirectory = path.join(process.cwd(), "contents");
     const filenames = fs.readdirSync(postsDirectory);
 
-    return filenames.map((filename) => {
+    const posts = filenames.map((filename) => {
         const filePath = path.join(postsDirectory, filename);
         const fileContents = fs.readFileSync(filePath, "utf8");
         const { data: frontMatter, content } = matter(fileContents);
@@ -81,6 +81,12 @@ export function getBlogPosts(): BlogPost[] {
             frontMatter: frontMatter as BlogPost["frontMatter"],
             content: elementContent,
         };
+    });
+
+    return posts.sort((a, b) => {
+        const dateA = new Date(a.frontMatter.date);
+        const dateB = new Date(b.frontMatter.date);
+        return dateB.getTime() - dateA.getTime();
     });
 }
 
