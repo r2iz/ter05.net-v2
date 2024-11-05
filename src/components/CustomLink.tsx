@@ -73,13 +73,13 @@ export const CustomLink = async ({ href, ...props }: CustomLinkProps) => {
             </CardHeader>
             <CardContent>
                 {data?.description && (
-                    <p className="text-sm text-gray-300 line-clamp-2">
+                    <div className="text-sm text-gray-300 line-clamp-2">
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: "<div>" + data.description + "</div>",
                             }}
                         ></div>
-                    </p>
+                    </div>
                 )}
             </CardContent>
         </Card>
