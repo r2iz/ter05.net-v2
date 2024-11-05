@@ -4,21 +4,21 @@ interface CustomComponentProps {
 }
 
 export const CustomH1 = ({ children }: CustomComponentProps) => (
-    <h1 className="text-3xl font-bold flex flex-row mt-4">
+    <h1 className="text-3xl font-bold flex flex-row mt-8">
         <div className="text-gray-300 mr-2">#</div>
         {children}
     </h1>
 );
 
 export const CustomH2 = ({ children }: CustomComponentProps) => (
-    <h2 className="text-2xl font-semibold flex flex-row mt-3">
+    <h2 className="text-2xl font-semibold flex flex-row mt-7">
         <div className="text-gray-300 mr-2">##</div>
         {children}
     </h2>
 );
 
 export const CustomH3 = ({ children }: CustomComponentProps) => (
-    <h3 className="text-xl font-medium flex flex-row mt-2">
+    <h3 className="text-xl font-medium flex flex-row mt-6">
         <div className="text-gray-300 mr-2">###</div>
         {children}
     </h3>
