@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
-import { type BlogPost } from '@/lib/api'
-
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { type BlogPost } from "@/lib/api";
 
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
     return (
@@ -37,7 +36,11 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                         transition={{ delay: 0.2 * (index + 1), duration: 0.5 }}
                         className="border-b border-gray-800 pb-4"
                     >
-                        <Link href={`/blog/${post.slug}`} passHref legacyBehavior>
+                        <Link
+                            href={`/blog/${post.slug}`}
+                            passHref
+                            legacyBehavior
+                        >
                             <motion.a
                                 className="group flex justify-between items-center"
                                 whileHover={{ x: 10 }}
@@ -46,12 +49,18 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                                     <h2 className="text-xl font-semibold mb-1 text-white group-hover:text-blue-400 transition-colors">
                                         {post.frontMatter.title}
                                     </h2>
-                                    <p className="text-sm text-gray-400">{post.frontMatter.date}</p>
+                                    <p className="text-sm text-gray-400">
+                                        {post.frontMatter.date}
+                                    </p>
                                 </div>
                                 <motion.div
                                     initial={{ opacity: 0, x: -10 }}
                                     whileHover={{ opacity: 1, x: 0 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 400,
+                                        damping: 10,
+                                    }}
                                 >
                                     <ArrowRight className="text-blue-400" />
                                 </motion.div>
@@ -61,5 +70,5 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                 ))}
             </motion.ul>
         </motion.div>
-    )
+    );
 }
