@@ -35,7 +35,7 @@ export default function About() {
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
                         <h2 className="text-2xl font-semibold mb-4">
-                            Who I am
+                            Who am I
                         </h2>
                         <p className="text-gray-300 leading-relaxed">
                             TypeScript, Golang, Arch Linux, Future
@@ -49,7 +49,7 @@ export default function About() {
                         transition={{ delay: 0.4, duration: 0.5 }}
                     >
                         <h2 className="text-2xl font-semibold mb-4">
-                            What I Do
+                            What I Like
                         </h2>
                         <p className="text-gray-300 leading-relaxed">
                             自宅サーバー, web開発, Linux, アプリ開発(Flutter),
@@ -93,7 +93,7 @@ export default function About() {
                         transition={{ delay: 0.8, duration: 0.5 }}
                     >
                         <h2 className="text-2xl font-semibold mb-4">
-                            Connect Me
+                            Contact Me
                         </h2>
                         <div className="flex justify-center space-x-6">
                             <a
